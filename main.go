@@ -69,8 +69,7 @@ func main() {
 	bobSecret := keyExchange.ComputeSecret(bobPriv, alicePub)
 
 	// alice -> bob
-	data1 := []byte("Hello Bob!")
-	ciphertext1, err := encrypt(aliceSecret, data1)
+	ciphertext1, err := encrypt(aliceSecret, []byte("Hello Bob!"))
 	if err != nil {
 		log.Fatalln(err)
 	}
